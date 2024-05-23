@@ -5,7 +5,7 @@ class Window(QtWidgets.QWidget):
 
     def __init__(self, parent=None):
         super().__init__(parent)
-
+        self.initUi()
         # TODO Вызовите метод для инициализации интерфейса
 
     def initUi(self) -> None:
@@ -22,7 +22,7 @@ class Window(QtWidgets.QWidget):
         self.lineEditLogin.setPlaceholderText("Enter a Login")  # TODO добавьте placeholderText "Введите логин" с помощью метода .setPlaceholderText()
         self.lineEditPassword = QtWidgets.QLineEdit()  # TODO создайте виджет QLineEdit
         self.lineEditPassword.setPlaceholderText("Enter a password")  # TODO добавьте placeholderText "Введите пароль"
-        self.lineEditPassword.setEchoMode()  # TODO установите ограничение видимости вводимых знаков с помощью метода .setEchoMode()
+        self.lineEditPassword.setEchoMode(QtWidgets.QLineEdit.EchoMode.Password)  # TODO установите ограничение видимости вводимых знаков с помощью метода .setEchoMode()
 
         self.pushButtonLogin = QtWidgets.QPushButton()  # TODO создайте виджет QPushButton
         self.pushButtonLogin.setText("Enter")  # TODO установите текст "Войти" с помощью метода setText()
