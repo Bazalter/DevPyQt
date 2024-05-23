@@ -9,6 +9,7 @@ class Window(QtWidgets.QWidget):
         super().__init__(parent)
 
         self.initUi()
+        self.initSignals()
         # TODO: Вызвать метод с инициализацией сигналов
 
     def initUi(self) -> None:
@@ -140,7 +141,7 @@ class Window(QtWidgets.QWidget):
         self.pushButtonDoubleSpinBox  # TODO подключить слот для вывода значения из doubleSpinBox в plainTextEditLog при нажатии на кнопку
         self.pushButtonTimeEdit  # TODO подключить слот для вывода времени из timeEdit в plainTextEditLog при нажатии на кнопку
         self.pushButtonDateTimeEdit  # TODO подключить слот для вывода времени из dateTimeEdit в plainTextEditLog при нажатии на кнопку
-        self.pushButtonClearLog  # TODO подключить слот для очистки plainTextEditLog при нажатии на кнопку
+        self.pushButtonClearLog.clicked.connect(self.pushButtonClearLog)  # TODO подключить слот для очистки plainTextEditLog при нажатии на кнопку
 
         self.comboBox  # TODO подключить слот для вывода текста в plainTextEditLog при изменении выбранного элемента в comboBox
         self.spinBox  # TODO подключить слот для вывода значения в plainTextEditLog при изменении значения в spinBox
@@ -156,6 +157,10 @@ class Window(QtWidgets.QWidget):
 
         self.plainTextEditLog.setPlainText(self.lineEdit.text())
 
+
+    def pushButtonClearLog(self) -> None:
+
+        self.plainTextEditLog.setPlainText("123222")
     # TODO Самостоятельная реализация слотов для сигналов
 
 
